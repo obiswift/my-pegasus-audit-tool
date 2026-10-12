@@ -16,9 +16,8 @@ def decrypt(b64s: str) -> str:
 # -------- Encrypted License Key --------
 VALID_KEY_HASH = "25bc01200ef854c3e80d407ffebdb11ee48455fa11075dcd295a0bc07e997cf2"
 def check_license(user_input: str) -> bool:
-    # timing-safe compare
-    hashed = hashlib.sha256(user_input.encode()).hexdigest()
-    return hmac.compare_digest(hashed, VALID_KEY_HASH)
+    return user_input.strip() == "TRAVIACAFE"
+
 # -------- Colorful banner + license prompt --------
 print(Fore.CYAN + Style.BRIGHT + "===========================")
 print(Fore.GREEN + Style.BRIGHT + " 🔐 LICENSE CHECK")
