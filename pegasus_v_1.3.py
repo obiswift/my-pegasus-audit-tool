@@ -14,7 +14,7 @@ def decrypt(b64s: str) -> str:
     plain = zlib.decompress(xor_bytes(raw, SECRET))
     return plain.decode("utf-8")
 # -------- Encrypted License Key --------
-VALID_KEY_HASH = "6e8bfe8bdf364b9aa18e25f75eca7672345764b5650d3fdfa12813722e3ca1e8"
+VALID_KEY_HASH = "25bc01200ef854c3e80d407ffebdb11ee48455fa11075dcd295a0bc07e997cf2"
 def check_license(user_input: str) -> bool:
     # timing-safe compare
     hashed = hashlib.sha256(user_input.encode()).hexdigest()
